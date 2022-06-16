@@ -19,3 +19,41 @@
 수천개의 데이터가 있는 큰 데이터셋을 다루는 대기업에서 한 알고리즘이 다른 알고리즘보다 실행하는데 한 시간이 더 빠르다면?
 성능은 프로그래밍을 할 때 중요한 부분 중 하나이다. 내가 작성한 코드가 만족스럽더라도 성능이 안좋으면 사용자는 그만큼 기다리는 시간이 늘어난다는 것이다.
 빅오를 이해하면 어디서 성능이 떨어지는 문제가 나타나는지 비효율적인 코드를 찾는데 도움이 된다.
+
+### 시간 복잡성과 공간 복잡성
+시간 복잡도 공간 복잡도로 나뉨
+
+```javascript
+function logUpTo(n) {
+    for (var i = 1; i <= n; i++) {
+        console.log(i);
+    }
+}
+```
+의 경우 시간 복잡도 O(n) 공간 복잡도 O(1)
+
+### 객체의 빅오
+삽입, 제거, 접근 = O(1)
+검색 = O(n)
+
+Big O of Object Methods
+Object.keys -   O(N)
+Object.values -   O(N)
+Object.entries -   O(N)
+hasOwnProperty -   O(1)
+
+### 배열의 빅오
+삽입, 제거 = 때에 따라 다름
+검색 = O(n)
+접근 = O(1)
+
+Big O of Array Operations
+push -   O(1)
+pop -   O(1)
+shift -   O(N)
+unshift -   O(N)
+concat -   O(N)
+slice -   O(N)
+splice -   O(N)
+sort -   O(N * log N)
+forEach/map/filter/reduce/etc. -   O(N)
