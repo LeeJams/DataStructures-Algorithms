@@ -23,3 +23,19 @@
 문제를 해결할 수 있다면 해결하고 해결할 수 없다면 더 단순한 문제를 해결한다.
 
 마지막으로 코드를 되돌아보고 리팩토링을 하자
+
+## 문제 해결 패턴
+- 분할 정복
+- 탐욕 알고리즘
+
+- 빈도 카운터
+
+- SOME PATTERNS...
+  - Frequency Counter
+  - Multiple Pointers
+  - Sliding Window
+  - Divide and Conquer
+  - Dynamic Programming
+  - Greedy Algorithms
+  - Backtracking
+- Many more!
