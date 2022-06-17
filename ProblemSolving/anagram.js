@@ -1,4 +1,24 @@
-function validAnagram(first, second) {
+function validAnagram(str1, str2) {
+  if (str1.length !== str2.length) return false;
+  const firstObj = {};
+  const secondObj = {};
+  for (let i = 0; i < str1.length; i++) {
+    firstObj[str1[i]] = ++firstObj[str1[i]] || 1;
+    secondObj[str2[i]] = ++secondObj[str2[i]] || 1;
+  }
+  for (let key in firstObj) {
+    if (!(key in secondObj)) {
+      return false;
+    }
+
+    if (firstObj[key] !== secondObj[key]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function validAnagram_solution(first, second) {
   if (first.length !== second.length) {
     return false;
   }
@@ -26,4 +46,6 @@ function validAnagram(first, second) {
 }
 
 // {a: 0, n: 0, g: 0, r: 0, m: 0,s:1}
-validAnagram('anagrams', 'nagaramm')
+console.log(validAnagram("", "")); // true
+console.log(validAnagram("aaz", "zza")); // false
+console.log(validAnagram("anagram", "nagaram")); // true
