@@ -51,7 +51,11 @@
   - 특정 조건에 따라 창이 증가하거나 닫힙니다(그리고 새 창이 생성됩니다.
   - 배열/문자열 등에서 데이터의 하위 집합을 추적하는 데 매우 유용합니다.
 
-- Divide and Conquer
+- Divide and Conquer (분할 정복)
+
+  - 이 패턴은 데이터 세트를 더 작은 청크로 나눈 다음 데이터의 하위 집합으로 프로세스를 반복하는 것을 포함한다.
+  - 이 패턴은 시간 복잡성을 크게 줄일 수 있습니다.
+
 - Dynamic Programming
 - Greedy Algorithms
 - Backtracking

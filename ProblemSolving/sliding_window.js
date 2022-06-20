@@ -10,17 +10,50 @@ function maxSubarraySum(arr, num) {
     return null;
   }
   let result = 0;
-  for (let i = 0; i < arr.length; i++) {
-    const newArr = arr.slice(i, i + num);
-    const sum = newArr.reduce((acc, cur) => acc + cur, 0);
-    if (sum > result) {
-      result = sum;
+  for (let i = 0; i < arr.length - num + 1; i++) {
+    let temp = 0;
+    for (let j = 0; j < num; j++) {
+      temp += arr[i + j];
+    }
+
+    if (temp > result) {
+      result = temp;
     }
   }
   return result;
 }
+// Time Complexity - O(n^2)
+
+function maxSubarraySum_solution(arr, num) {
+  let maxSum = 0;
+  let tempSum = 0;
+  if (arr.length < num) return null;
+  for (let i = 0; i < num; i++) {
+    maxSum += arr[i];
+  }
+  tempSum = maxSum;
+  for (let i = num; i < arr.length; i++) {
+    tempSum = tempSum - arr[i - num] + arr[i];
+    maxSum = Math.max(maxSum, tempSum);
+  }
+  return maxSum;
+}
+// Time Complexity - O(n)
+// 계속 새로 숫자를 뽑아서 다 더하는 것이 아니라
+// 기존 숫자를 유지한 상태로 앞은 빼고 새로운 숫자를 더하면서 최적화
+
+console.time('my solution')
 console.log(maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 2)); // 10
 console.log(maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 4)); // 17
 console.log(maxSubarraySum([4, 2, 1, 6], 1)); // 6
 console.log(maxSubarraySum([4, 2, 1, 6, 2], 4)); // 13
 console.log(maxSubarraySum([], 4)); // null
+console.timeEnd('my solution')
+
+console.time('solution')
+console.log(maxSubarraySum_solution([1, 2, 5, 2, 8, 1, 5], 2)); // 10
+console.log(maxSubarraySum_solution([1, 2, 5, 2, 8, 1, 5], 4)); // 17
+console.log(maxSubarraySum_solution([4, 2, 1, 6], 1)); // 6
+console.log(maxSubarraySum_solution([4, 2, 1, 6, 2], 4)); // 13
+console.log(maxSubarraySum_solution([], 4)); // null
+console.timeEnd('solution')
