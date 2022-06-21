@@ -10,6 +10,8 @@ You can solve this using the frequency counter pattern OR the multiple pointers 
 Time - O(n)
 Space - O(n)
 */
+
+// Frequency Counter
 function areThereDuplicates(...args) {
   if (args.length < 2) return false;
   const findObj = {};
@@ -24,6 +26,35 @@ function areThereDuplicates(...args) {
   return false;
 }
 
+// One Liner 솔루션
+function areThereDuplicates_solution1() {
+  return new Set(arguments).size !== arguments.length;
+}
+
+// Multiple Pointer
+function areThereDuplicates_solution2(...args) {
+  // Two pointers
+  args.sort();
+  let start = 0;
+  let next = 1;
+  while (next < args.length) {
+    if (args[start] === args[next]) {
+      return true;
+    }
+    start++;
+    next++;
+  }
+  return false;
+}
+
 console.log(areThereDuplicates(1, 2, 3)); // false
 console.log(areThereDuplicates(1, 2, 2)); // true
 console.log(areThereDuplicates("a", "b", "c", "a")); // true
+
+console.log(areThereDuplicates_solution1(1, 2, 3)); // false
+console.log(areThereDuplicates_solution1(1, 2, 2)); // true
+console.log(areThereDuplicates_solution1("a", "b", "c", "a")); // true
+
+console.log(areThereDuplicates_solution2(1, 2, 3)); // false
+console.log(areThereDuplicates_solution2(1, 2, 2)); // true
+console.log(areThereDuplicates_solution2("a", "b", "c", "a")); // true
