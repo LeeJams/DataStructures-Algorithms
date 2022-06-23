@@ -13,8 +13,13 @@ If there isn't one, return 0 instead.
 Time Complexity: O(n)
 Space Complexity: O(1)
 */
-function minSubarrayLen() {
-  // add whatever parameters you deem necessary - good luck!
+function minSubarrayLen(arr, num) {
+  if(!arr.length) return 0;
+  let result = 0;
+  let left = 0;
+  for(let i = 0; i < arr.length; i++){
+    // 
+  }
 }
 
 console.log(minSubarrayLen([2, 3, 1, 2, 4, 3], 7)); // 2 -> because [4, 3] is the smallest subarray

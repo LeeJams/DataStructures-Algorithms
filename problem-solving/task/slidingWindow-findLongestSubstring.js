@@ -7,8 +7,8 @@ findLongestSubstring이라는 함수를 작성합니다.
 
 Time Complexity: O(n)
 */
-function findLongestSubstring() {
-  // add whatever parameters you deem necessary - good luck!
+function findLongestSubstring(str) {
+  return [...new Set(str.split(''))].length
 }
 
 console.log(findLongestSubstring('')); // 0
