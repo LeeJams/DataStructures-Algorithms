@@ -13,8 +13,23 @@ In the first example below, [100, 200, 300] is a subarray of the original array,
 
 Time Complexity: O(n)
 */
-function maxSubarraySum() {
-  // add whatever parameters you deem necessary - good luck!
+function maxSubarraySum(arr, num) {
+  if (arr.length < num) return null;
+  let pairSum = 0;
+  for (let i = 0; i < num; i++) {
+    pairSum += arr[i];
+  }
+  let leftIdx = 0;
+  let maxNum = pairSum;
+  for (let i = num; i < arr.length; i++) {
+    pairSum -= arr[leftIdx];
+    pairSum += arr[i];
+    if (maxNum < pairSum) {
+      maxNum = pairSum;
+    }
+    leftIdx++;
+  }
+  return maxNum;
 }
 
 console.log(maxSubarraySum([100, 200, 300, 400], 2)); // 700
