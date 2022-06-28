@@ -10,17 +10,19 @@ https://www.topcoder.com/community/data-science/data-science-tutorials/binary-se
 function binarySearch(arr, num) {
   let left = 0;
   let right = arr.length - 1;
-  while (left <= right) {
-    let middle = Math.floor((right - left) / 2) + left;
-    if (arr[middle] === num) {
-      return middle;
-    } else if (num < arr[middle]) {
-      right = middle
-    } else if (num > arr[middle]){
-      left = middle
+  let middle = Math.floor((left + right) / 2);
+  while (left <= right && arr[middle] !== num) {
+    if (num < arr[middle]) {
+      right = middle - 1;
+    } else {
+      left = middle + 1;
     }
+    middle = Math.floor((left + right) / 2);
   }
-  return -1
+  if (arr[middle] === num) {
+    return middle;
+  }
+  return -1;
 }
 
 console.log(binarySearch([1, 2, 3, 4, 5], 2)); // 1
