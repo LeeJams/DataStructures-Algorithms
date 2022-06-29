@@ -15,7 +15,14 @@
   - findIndex
 
 ### Binary Search 이진 탐색
+
 - 선형 검색의 개선된 알고리즘으로 속도가 훨씬 빠르다.
 - 단, 정렬된 배열을 대상으로 사용할 수 있다.
 - 중간점을 선택하고 중간점 기준으로 좌측에 정보가 있는지 우측에 정보가 있는지 확인한 후 나머지는 버린다.
 - 이것을 반복해 결과 값을 찾는다.
+
+- Worst and Average Case - O(log n) / Best Case O(1)
+
+### Naive String Search 단순 문자열 검색
+
+- 
