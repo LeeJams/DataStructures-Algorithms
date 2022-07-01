@@ -17,6 +17,7 @@
 - 이러한 간단한 정렬 알고리즘을 배우는 것이 왜 중요한지 이해
 
 ### Bubble Sort 버블정렬
+
 - 가장 큰 값을 맨 뒤로 보내며 정렬하는 알고리즘!
 - 반복을 거듭함에 따라 정렬해야 하는 항목의 수가 감소함.
 - Best - O(n)
@@ -28,3 +29,11 @@
 ### Insertion Sort 삽입정렬
 
 - 항상 정렬되는 더 큰 왼쪽 절반을 점진적으로 생성하여 정렬을 구축합니다.
+
+### Big O of Sorting Algorithms
+
+| Algorithms     | Time Complexity(Best) | Time Complexity(Average) | Time Complexity(Worst) | Space Complexity |
+| -------------- | --------------------- | ------------------------ | ---------------------- | ---------------- |
+| Bubble Sort    | O(n)                  | O(n^2)                   | O(n^2)                 | O(1)             |
+| Insertion Sort | O(n)                  | O(n^2)                   | O(n^2)                 | O(1)             |
+| Selection Sort | O(n)                  | O(n^2)                   | O(n^2)                 | O(1)             |
