@@ -42,3 +42,9 @@
 합병 정렬을 구현하려면 먼저 정렬된 두 배열의 합병을 담당하는 함수를 구현하는 것이 유용합니다.
 정렬된 두 배열이 주어지면, 이 도우미 함수는 또한 정렬되고 두 입력 배열의 모든 요소로 구성된 새로운 배열을 생성해야 한다.
 이 기능은 O(n + m) 시간 및 O(n + m) 공간에서 실행되어야 하며 전달된 파라미터를 수정해서는 안 됩니다.
+
+| Algorithms     | Time Complexity(Best) | Time Complexity(Average) | Time Complexity(Worst) | Space Complexity |
+| -------------- | --------------------- | ------------------------ | ---------------------- | ---------------- |
+| Merge Sort     | O(n log n)            | O(n log n)               | O(n log n)             | O(n)             |
+| Insertion Sort | O(n)                  | O(n^2)                   | O(n^2)                 | O(1)             |
+| Selection Sort | O(n)                  | O(n^2)                   | O(n^2)                 | O(1)             |
