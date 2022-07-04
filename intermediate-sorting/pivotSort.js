@@ -22,7 +22,27 @@ Pivot Pseudocode
 */
 
 function pivotHelper(arr) {
-  //
+  let pivot = 0;
+  let start = 1;
+  const last = arr.length;
+
+  let i = 1;
+  while (i < last) {
+    if (arr[i] < arr[pivot]) {
+      if(start !== i){
+          let temp = arr[start];
+          arr[start] = arr[i];
+          arr[i] = temp;
+      }
+      start++
+    } 
+    i++;
+  }
+  let temp = arr[start - 1];
+  arr[start - 1] = arr[pivot];
+  arr[pivot] = temp;
+
+  return arr;
 }
 
 console.log(pivotHelper([5, 2, 1, 8, 4, 7, 6, 3])); // 4
