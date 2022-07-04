@@ -52,5 +52,5 @@
 | Algorithms     | Time Complexity(Best) | Time Complexity(Average) | Time Complexity(Worst) | Space Complexity |
 | -------------- | --------------------- | ------------------------ | ---------------------- | ---------------- |
 | Merge Sort     | O(n log n)            | O(n log n)               | O(n log n)             | O(n)             |
-| Insertion Sort | O(n)                  | O(n^2)                   | O(n^2)                 | O(1)             |
+| Quick Sort     | O(n log n)            | O(n log n)               | O(n^2)                 | O(log n)         |
 | Selection Sort | O(n)                  | O(n^2)                   | O(n^2)                 | O(1)             |
