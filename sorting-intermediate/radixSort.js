@@ -15,7 +15,6 @@ function mostDigits(arr) {
   return maxDigits;
 }
 
-
 /* 
 RADIX SORT PSEUDOCODE
 숫자 목록을 허용하는 함수 정의
@@ -27,3 +26,19 @@ k번째 숫자를 기준으로 각 숫자를 해당 버킷에 배치합니다.
 기존 어레이를 버킷의 값으로 바꿉니다(0부터 시작하여 최대 9까지).
 마지막에 목록을 반환하세요!
 */
+
+function radixSort(arr) {
+  const maxDigitCount = mostDigits(arr);
+  for (let i = 0; i < maxDigitCount; i++) {
+    const bucket = Array.from({length: 10}, () => []);
+    for (let j = 0; j < arr.length; j++) {
+      const digit = getDigit(arr[j], i);
+      bucket[digit].push(arr[j]);
+    }
+    // arr = bucket.flat();
+    arr = [].concat(...bucket);
+  }
+  return arr;
+}
+
+console.log(radixSort([1, 515, 123, 151, 2, 3, 7182, 12]));
