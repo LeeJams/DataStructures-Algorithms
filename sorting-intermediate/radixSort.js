@@ -28,13 +28,22 @@ k번째 숫자를 기준으로 각 숫자를 해당 버킷에 배치합니다.
 */
 
 function radixSort(arr) {
+  // 가장 큰 자리 수를 찾는다.
   const maxDigitCount = mostDigits(arr);
+
   for (let i = 0; i < maxDigitCount; i++) {
+    // 10개의 배열을 갖는 배열을 만든다.
     const bucket = Array.from({length: 10}, () => []);
+
     for (let j = 0; j < arr.length; j++) {
+      // 하나씩 돌면서 자리수에 대한 수를 찾는다.
       const digit = getDigit(arr[j], i);
+
+      // 버킷에 각 자리수에 맞는 수를 넣어준다.
       bucket[digit].push(arr[j]);
     }
+
+    // 2차원 배열을 1차원으로 만들어서 넣어준다.
     // arr = bucket.flat();
     arr = [].concat(...bucket);
   }
