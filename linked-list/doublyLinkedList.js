@@ -73,19 +73,65 @@ class DoublyLinkedList {
     let len = this.length - 1;
     let foundNode;
     if (index > Math.floor(this.length / 2)) {
-      console.log('start tail')
+      console.log("start tail");
       foundNode = this.tail;
       for (let i = 0; i < len - index; i++) {
         foundNode = foundNode.prev;
       }
     } else {
-      console.log('start head')
+      console.log("start head");
       foundNode = this.head;
       for (let i = 0; i < index; i++) {
         foundNode = foundNode.next;
       }
     }
     return foundNode;
+  }
+  set(index, val) {
+    let foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
+  }
+  insert(index, val) {
+    if (!index) return !!this.unshift(val);
+    if (index === this.length) return !!this.push(val);
+
+    let foundNode = this.get(index - 1);
+    if (foundNode) {
+      let newNode = new Node(val);
+      newNode.prev = foundNode;
+      newNode.next = foundNode.next;
+
+      foundNode.next.prev = newNode;
+      foundNode.next = newNode;
+      this.length++;
+      return true;
+    }
+    return false;
+  }
+  remove(index) {
+    if (!index) return !!this.shift();
+    if (index === this.length - 1) return !!this.pop();
+
+    let removedNode = this.get(index);
+    if (removedNode) {
+      let beforeNode = removedNode.prev;
+      let afterNode = removedNode.next;
+
+      beforeNode.next = afterNode;
+      afterNode.prev = beforeNode;
+
+      removedNode.next = null;
+      removedNode.prev = null;
+
+      this.length--;
+
+      return removedNode;
+    }
+    return false;
   }
 }
 
@@ -95,12 +141,6 @@ console.log(list.pop());
 list.push(1);
 list.push(2);
 list.push(3);
-list.push(4);
-list.push(5);
-list.push(6);
-list.push(7);
-list.push(8);
-list.push(9);
 
 // console.log(list.shift());
 // console.log(list.shift());
@@ -111,6 +151,12 @@ list.push(9);
 // console.log(list.unshift(50));
 // console.log(list.unshift(7897));
 
-console.log('get - ', list.get(7))
+console.log("get - ", list.get(7));
+// console.log("set - ", list.set(1, 100));
+
+console.log("insert - ", list.insert(1, 5000));
+console.log("remove - ", list.remove(1));
+console.log("remove - ", list.remove(1));
+console.log("remove - ", list.remove(1));
 
 console.log(list);
