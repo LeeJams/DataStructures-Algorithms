@@ -18,7 +18,32 @@
 - 실행 취소/다시 실행
 - 라우팅(기록 개체)은 스택처럼 처리됩니다!
 
-### Big O of Stacks 
+### Big O of Stacks
+
+- Insertion - O(1)
+- Removal - O(1)
+- Searching - O(n)
+- Access - O(n)
+
+## Queues
+
+- 정의
+- 사용 사례 이해
+- 데이터 구조에 대한 작업 구현
+
+### Queue 란?
+
+- FIFO data structure!
+- First In First Out
+
+### 사례
+
+- 대기열은 어디에나 있습니다! 마지막으로 줄을 서서 기다렸던 때를 생각해 보세요.
+- 백그라운드 태스크
+- 리소스 업로드 중
+- 인쇄 / 작업 처리
+
+### Big O of Queues
 
 - Insertion - O(1)
 - Removal - O(1)

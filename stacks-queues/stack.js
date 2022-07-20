@@ -28,12 +28,10 @@ class Stack {
     this.size--;
     let popStack = this.first;
     if (!this.size) {
-      this.first = null;
       this.last = null;
-    } else {
-      this.first = popStack.next;
-      popStack.next = null;
     }
+    this.first = popStack.next;
+    popStack.next = null;
 
     return popStack.val;
   }
@@ -49,4 +47,4 @@ console.log(stack.pop());
 console.log(stack.pop());
 console.log(stack.pop());
 
-console.log(stack)
+console.log(stack);
