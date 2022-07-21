@@ -37,3 +37,9 @@
 - 인공지능
 - 운영 체제의 폴더
 - 컴퓨터 파일 시스템
+
+### Big O of Binary Search Tree
+
+- Insertion - O(lon n)
+- Searching - O(lon n)
+- 최악의 경우 O(n)
