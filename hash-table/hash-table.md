@@ -27,3 +27,9 @@
 - 충돌에 대처하기 위한 전략에는 여러 가지가 있지만, 다음 두 가지에 초점을 맞추겠습니다.
   - 개별 체인
   - 선형 탐색
+
+### Big O of Hash Table (Average Case)
+
+- insert - O(1)
+- Deletion - O(1)
+- Access - O(1)
