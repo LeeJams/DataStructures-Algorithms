@@ -44,7 +44,7 @@ class Graph {
     }
   }
 
-  depthFirstSearch(start) {
+  depthFirstRecursive(start) {
     const visited = {};
     const result = [];
     const adjacencyList = this.adjacencyList;
@@ -56,11 +56,69 @@ class Graph {
       result.push(vertex);
 
       adjacencyList[vertex].forEach((neighbor) => {
-        // console.log(visited);
-        // console.log(neighbor);
         if (!visited[neighbor]) return dfs(neighbor);
       });
     })(start);
+
+    return result;
+  }
+  depthFirstIterative(start) {
+    const result = [];
+    const stack = [start];
+    const visited = {};
+
+    visited[start] = true;
+
+    while (stack.length) {
+      const curremtVertex = stack.pop();
+      result.push(curremtVertex);
+
+      this.adjacencyList[curremtVertex].forEach((neighbor) => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          stack.push(neighbor);
+        }
+      });
+    }
+
+    return result;
+  }
+  // depthFirstIterative(start) {
+  //   const result = [];
+  //   const stack = [start];
+
+  //   while (stack.length) {
+  //     const vertex = stack.pop();
+  //     if (vertex) {
+  //       result.push(vertex);
+  //       this.adjacencyList[vertex].forEach((neighbor) => {
+  //         if (!result.includes(neighbor) && !stack.includes(neighbor)) {
+  //           stack.push(neighbor);
+  //         }
+  //       });
+  //     }
+  //   }
+
+  //   return result;
+  // }
+  breadthFirstSearch(start) {
+    const result = [];
+    const queue = [start];
+    const visited = {};
+
+    visited[start] = true;
+
+    while (queue.length) {
+      const curremtVertex = queue.shift();
+      result.push(curremtVertex);
+
+      this.adjacencyList[curremtVertex].forEach((neighbor) => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          queue.push(neighbor);
+        }
+      });
+    }
 
     return result;
   }
@@ -83,14 +141,14 @@ gr.addEdge("D", "E");
 gr.addEdge("D", "F");
 gr.addEdge("E", "F");
 
-/* 
-  {
-    A: [ 'B', 'C' ],
-    B: [ 'A', 'D' ],
-    C: [ 'A', 'E' ],
-    D: [ 'B', 'E', 'F' ],
-    E: [ 'C', 'D', 'F' ],
-    F: [ 'D', 'E' ]
-  }
-*/
-console.log(gr.depthFirstSearch("A"));
+//          A
+//        /   \
+//       B     C
+//       |     |
+//       D --- E
+//        \   /
+//          F
+
+console.log(gr.depthFirstRecursive("A"));
+console.log(gr.depthFirstIterative("A"));
+console.log(gr.breadthFirstSearch("A"));
