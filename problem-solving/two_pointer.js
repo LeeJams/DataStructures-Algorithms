@@ -1,8 +1,6 @@
 /* 
 multiple_pointer 패턴
 
-console.log(countUniqueValues
-
 정렬된 배열을 허용하고 배열의 고유 값을 카운트하는 countUniqueValues라는 함수를 구현합니다. 
 배열에 음수가 있을 수 있지만 항상 정렬됩니다.
 */
