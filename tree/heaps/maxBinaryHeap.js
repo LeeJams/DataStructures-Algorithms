@@ -82,6 +82,8 @@ binaryHeap.insert(33);
 binaryHeap.insert(18);
 binaryHeap.insert(27);
 binaryHeap.insert(12);
+binaryHeap.insert(50);
+console.log(binaryHeap.val);
 
 console.log(binaryHeap.extractMax());
 console.log(binaryHeap.extractMax());

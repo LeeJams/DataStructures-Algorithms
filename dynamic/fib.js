@@ -20,4 +20,16 @@ function fib_table(n) {
   return fibNums[n];
 }
 
-console.log(fib(40));
+// console.log(fib(40));
+console.log(fib_table(3));
+console.log(fib_table(4));
+console.log(fib_table(5));
+console.log(fib_table(6));
+console.log(fib_table(7));
+console.log(fib_table(8));
+console.log(fib_table(9));
+console.log(fib_table(10));
+console.log(fib_table(11));
+console.log(fib_table(12));
+console.log(fib_table(13));
+console.log(fib_table(14));
